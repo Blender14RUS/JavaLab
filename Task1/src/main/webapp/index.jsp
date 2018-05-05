@@ -1,25 +1,81 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Insert title here</title>
 </head>
 <body>
+<table>
+    <table>
+    <thead>
+        <tr>
+        <th>GET</th>
+        <th>POST</th>
+        <th>PUT</th>
+        <th>DELETE</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            <form method="GET" action="${pageContext.request.contextPath}/index">
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text"  name="name" /></td>
+                    </tr>
+                </table>
+                <input type="submit"  value="submit"/>
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="${pageContext.request.contextPath}/index">
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text"  name="name" /></td>
+                    </tr>
+                </table>
+                <input type="submit"  value="submit"/>
+            </form>
+        </td>
+        <td>
+            <form method="PUT" action="${pageContext.request.contextPath}/index">
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text"  name="name" /></td>
+                    </tr>
+                </table>
+                <input type="submit"  value="submit"/>
+            </form>
+        </td>
+        <td>
+            <form method="DELETE" action="${pageContext.request.contextPath}/index">
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text"  name="name" /></td>
+                    </tr>
+                </table>
+                <input type="submit"  value="submit"/>
+            </form>
+        </td>
+    </tr>
+    </table>
 
-<h1>Hello JSP</h1>
+    <table>
+    <tr>
+        <table>
+            <c:forEach items="${data}" var="data">
+                <tr>
+                    <td>${data}</td>
+                </tr>
+            </c:forEach>
+        </table>
+    </tr>
+    </table>
 
-<%
-    java.util.Date date = new java.util.Date();
-%>
-
-<h2>
-    Now is
-    <%=date.toString()%>
-</h2>
-
-<a href="servlet">Click here to see servlet</a>
+</table>
 </body>
 </html>
