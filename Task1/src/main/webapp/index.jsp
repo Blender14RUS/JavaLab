@@ -4,8 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+    </script>
 </head>
 <body>
+
+<div id="msg"></div>
+
 <table>
     <table>
     <thead>
@@ -40,22 +46,22 @@
             </form>
         </td>
         <td>
-            <form method="PUT" action="${pageContext.request.contextPath}/index">
+            <form id="put_method">
                 <table>
                     <tr>
                         <td>Name:</td>
-                        <td><input type="text"  name="name" /></td>
+                        <td><input type="text"  name="put_name" /></td>
                     </tr>
                 </table>
                 <input type="submit"  value="submit"/>
             </form>
         </td>
         <td>
-            <form method="DELETE" action="${pageContext.request.contextPath}/index">
+            <form id="delete-method">
                 <table>
                     <tr>
                         <td>Name:</td>
-                        <td><input type="text"  name="name" /></td>
+                        <td><input type="text"  name="delete_name" /></td>
                     </tr>
                 </table>
                 <input type="submit"  value="submit"/>
@@ -75,7 +81,47 @@
         </table>
     </tr>
     </table>
-
 </table>
+
+<script>
+ $("#put_method").submit(function(event){
+            event.preventDefault();
+            var $form = $(this);
+            var url = 'http://localhost:8888/index';
+            var userName = $form.find('input[name="put_name"]').val();
+
+            $.ajax({
+                type : 'PUT',
+                url : url,
+                contentType: 'application/json',
+                data : JSON.stringify(userName),
+                success : function(data, status, xhr){
+                   window.location.replace("http://localhost:8888/index");
+                },
+                error: function(xhr, status, error){
+                $('#msg').html('<span style=\'color:red;\'>'+error+'</span>')
+                }
+            });
+        });
+  $("#delete-method").submit(function(event){
+             event.preventDefault();
+             var $form = $(this);
+             var url = 'http://localhost:8888/index';
+             var userName = $form.find('input[name="delete_name"]').val();
+
+             $.ajax({
+                 type : 'DELETE',
+                 url : url,
+                 contentType: 'application/json',
+                 data : JSON.stringify(userName),
+                 success : function(data, status, xhr){
+                    window.location.replace("http://localhost:8888/index");
+                 },
+                 error: function(xhr, status, error){
+                 $('#msg').html('<span style=\'color:red;\'>'+error+'</span>')
+                 }
+             });
+         });
+</script>
 </body>
 </html>
