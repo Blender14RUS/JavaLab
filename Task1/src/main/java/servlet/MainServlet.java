@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.util.*;
 
 @WebServlet(urlPatterns = {"/index"})
-public class UserServlet extends HttpServlet {
+public class MainServlet extends HttpServlet {
     List<String> data = new LinkedList<>();
+
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         System.out.println("--put--");
         String body = inputStreamToString(req.getInputStream());
-        body = body.substring(1, body.length()-1);
+        body = body.substring(1, body.length() - 1);
         if (!data.contains(body)) data.add(body);
 
         System.out.println(data);
@@ -35,7 +35,7 @@ public class UserServlet extends HttpServlet {
         System.out.println("--get--");
         String name = req.getParameter("name");
         System.out.println(name);
-        if (name!= null) data.add(name);
+        if (name != null) data.add(name);
         System.out.println(data);
         req.setAttribute("data", data);
         RequestDispatcher dispatcher = req.getServletContext()
@@ -59,7 +59,7 @@ public class UserServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("--delete--");
         String body = inputStreamToString(req.getInputStream());
-        body = body.substring(1, body.length()-1);
+        body = body.substring(1, body.length() - 1);
         if (data.contains(body)) data.remove(body);
         System.out.println(data);
         req.setAttribute("data", data);
