@@ -1,6 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+         pageEncoding="UTF-8" import="java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+Cookie cookies [] = request.getCookies ();
+Cookie myCookie = null;
+if (cookies != null)
+{
+  for (int i = 0; i < cookies.length; i++)
+  {
+    if (cookies[i].getName().equals("count"))
+    {
+    myCookie = cookies[i];
+    break;
+    }
+  }
+}
+if (myCookie == null) {
+  Cookie cookie = new Cookie ("count", "1");
+  cookie.setMaxAge(30);
+  response.addCookie(cookie);
+  }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +40,7 @@
         <th>POST</th>
         <th>PUT</th>
         <th>DELETE</th>
+        <th>Count view</th>
         </tr>
     </thead>
     <tr>
@@ -66,6 +87,20 @@
                 </table>
                 <input type="submit"  value="submit"/>
             </form>
+        </td>
+        <td>
+            <%
+            if (myCookie != null)
+            {
+            %>
+                <%=myCookie.getValue()%>
+            <%
+            } else {
+            %>
+              1
+            <%
+            }
+            %>
         </td>
     </tr>
     </table>
