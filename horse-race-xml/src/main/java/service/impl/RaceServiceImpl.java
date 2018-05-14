@@ -23,7 +23,7 @@ public class RaceServiceImpl implements RaceService {
     @Override
     public void info() {
         raceInfo.setDate(LocalTime.of((11 + random.nextInt(6)), 00, 00));
-        System.out.println("Today's Racecards");
+        System.out.println((char) 27 + "[35m" + "Today's Racecards" + (char) 27 + "[0m");
         System.out.println(raceInfo.getDate().getHour() + ":00 | " + raceInfo.getRidersList().size() + " Runners");
         int i = 1;
         for (Rider rider : raceInfo.getRidersList()) {
@@ -33,7 +33,7 @@ public class RaceServiceImpl implements RaceService {
 
     @Override
     public void addMember(List<Rider> rider) {
-        raceInfo.setRidersList(rider.subList(0, 4));
+        raceInfo.setRidersList(rider.subList(0, 4 + random.nextInt(2)));
     }
 
 }

@@ -31,12 +31,12 @@ public class HorseRaceProjectApplication {
         race.addMember(ridersList);
 
         race.info();
-        System.out.print("Choose rider: ");
+        System.out.print((char) 27 + "[32m" + "Choose rider: " + (char) 27 + "[0m");
         Scanner in = new Scanner(System.in);
         int i = in.nextInt();
         EmulationService emulator = context.getBean("emulationService", EmulationService.class);
 
-        emulator.chooseMemberById(i-1);
+        emulator.chooseMemberById(i - 1);
 
         emulator.start();
     }

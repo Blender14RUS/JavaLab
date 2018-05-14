@@ -14,11 +14,8 @@ import java.util.Random;
 @Setter
 @NoArgsConstructor
 public class EmulationServiceImpl implements EmulationService {
-
     final Random random = new Random();
-
     private RaceServiceImpl raceService;
-
     private Rider chooseRider;
 
     @Override
@@ -40,11 +37,13 @@ public class EmulationServiceImpl implements EmulationService {
         }
         System.out.println("-----FINISH-----");
         shufflePlace(raceService.getRaceInfo().getRidersList());
-        if ((chooseRider.getName().equals("Vladimir Putin")) || (raceService.getRaceInfo().getRidersList().get(0).equals(chooseRider))) {
+        if (raceService.getRaceInfo().getRidersList().get(0).equals(chooseRider)) {
+            System.out.println((char) 27 + "[34m" + raceService.getRaceInfo().getRidersList().get(0).getName() + (char) 27 + "[0m");
             System.out.println((char) 27 + "[34m" + "Winner winner chicken dinner!" + (char) 27 + "[0m");
-            System.out.println((char) 27 + "[34m" + "Congratulations you WON!" + (char) 27 + "[0m");
+            System.out.println((char) 27 + "[34m" + "Congratulations, YOU WON!" + (char) 27 + "[0m");
         } else {
-            System.out.println((char) 27 + "[31m" + "YOU DIED" + (char) 27 + "[0m");
+            System.out.println((char) 27 + "[31m" + "YOU LOSE" + (char) 27 + "[0m");
+            System.out.println((char) 27 + "[31m" + raceService.getRaceInfo().getRidersList().get(0).getName() + " WIN" + (char) 27 + "[0m");
         }
     }
 

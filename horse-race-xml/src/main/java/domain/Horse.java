@@ -15,7 +15,7 @@ public class Horse {
     @Override
     public String toString() {
         return name +
-                ", " + age + " years old" +
+                ", " + age + " age" +
                 ", " + breed;
     }
 }
