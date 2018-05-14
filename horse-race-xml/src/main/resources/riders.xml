@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="rider1" class="domain.Rider">
+        <property name="name" value="Aleksey Naval'nyy"/>
+        <property name="age" value="41"/>
+        <property name="horse" ref="horse1"/>
+    </bean>
+
+    <bean id="rider2" class="domain.Rider">
+        <property name="name" value="Caroline Powell"/>
+        <property name="age" value="45"/>
+        <property name="horse" ref="horse3"/>
+    </bean>
+
+    <bean id="rider3" class="domain.Rider">
+        <property name="name" value="Andreas Dibowski"/>
+        <property name="age" value="52"/>
+        <property name="horse" ref="horse5"/>
+    </bean>
+
+    <bean id="rider4" class="domain.Rider">
+        <property name="name" value="Steffen Peters"/>
+        <property name="age" value="53"/>
+        <property name="horse" ref="horse2"/>
+    </bean>
+
+    <bean id="rider5" class="domain.Rider">
+        <property name="name" value="Ian Millar"/>
+        <property name="age" value="71"/>
+        <property name="horse" ref="horse4"/>
+    </bean>
+
+    <bean id="rider6" class="domain.Rider">
+        <property name="name" value="Dorothee Schneider"/>
+        <property name="age" value="49"/>
+        <property name="horse" ref="horse7"/>
+    </bean>
+
+    <bean id="rider7" class="domain.Rider">
+        <property name="name" value="Chantal Sutherland"/>
+        <property name="age" value="42"/>
+        <property name="horse" ref="horse6"/>
+    </bean>
+
+    <bean id="rider8" class="domain.Rider">
+        <property name="name" value="Carl Bouckaert"/>
+        <property name="age" value="63"/>
+        <property name="horse" ref="horse8"/>
+    </bean>
+
+    <bean id="rider9" class="domain.Rider">
+        <property name="name" value="Andrew Nicholson"/>
+        <property name="age" value="56"/>
+        <property name="horse" ref="horse10"/>
+    </bean>
+
+    <bean id="rider10" class="domain.Rider">
+        <property name="name" value="Vladimir Putin"/>
+        <property name="age" value="65"/>
+        <property name="horse" ref="horse9"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="horse1" class="domain.Horse" depends-on="breed1">
+        <property name="name" value="Diablo"/>
+        <property name="age" value="8"/>
+        <property name="breed" ref="breed1"/>
+    </bean>
+
+    <bean id="horse2" class="domain.Horse" depends-on="breed2">
+        <property name="name" value="Oki Doki"/>
+        <property name="age" value="8"/>
+        <property name="breed" ref="breed2"/>
+    </bean>
+
+    <bean id="horse3" class="domain.Horse" depends-on="breed3">
+        <property name="name" value="Oscar"/>
+        <property name="age" value="9"/>
+        <property name="breed" ref="breed3"/>
+    </bean>
+
+    <bean id="horse4" class="domain.Horse" depends-on="breed3">
+        <property name="name" value="Luckystars"/>
+        <property name="age" value="8"/>
+        <property name="breed" ref="breed1"/>
+    </bean>
+
+    <bean id="horse5" class="domain.Horse" depends-on="breed3">
+        <property name="name" value="Unity"/>
+        <property name="age" value="9"/>
+        <property name="breed" ref="breed2"/>
+    </bean>
+
+    <bean id="horse6" class="domain.Horse" depends-on="breed1">
+        <property name="name" value="Grace"/>
+        <property name="age" value="8"/>
+        <property name="breed" ref="breed3"/>
+    </bean>
+
+    <bean id="horse7" class="domain.Horse" depends-on="breed2">
+        <property name="name" value="Nitro"/>
+        <property name="age" value="7"/>
+        <property name="breed" ref="breed1"/>
+    </bean>
+
+    <bean id="horse8" class="domain.Horse" depends-on="breed3">
+        <property name="name" value="Yankee"/>
+        <property name="age" value="9"/>
+        <property name="breed" ref="breed3"/>
+    </bean>
+
+    <bean id="horse9" class="domain.Horse" depends-on="breed3">
+        <property name="name" value="Aitch"/>
+        <property name="age" value="8"/>
+        <property name="breed" ref="breed2"/>
+    </bean>
+
+    <bean id="horse10" class="domain.Horse" depends-on="breed3">
+        <property name="name" value="Isis"/>
+        <property name="age" value="10"/>
+        <property name="breed" ref="breed1"/>
+    </bean>
+
+</beans>
