@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>lab.java</groupId>
-    <artifactId>horser-race-xml</artifactId>
+    <artifactId>spring-core-bean-configuration</artifactId>
     <version>0.0.1</version>
 
     <properties>
@@ -13,6 +13,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.version>5.0.6.RELEASE</spring.version>
         <lombok.version>1.16.22</lombok.version>
+        <cglib.version>3.2.6</cglib.version>
     </properties>
 
     <dependencies>
@@ -45,6 +46,12 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
         </dependency>
     </dependencies>
 
