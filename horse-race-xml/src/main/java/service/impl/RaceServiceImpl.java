@@ -2,7 +2,6 @@ package service.impl;
 
 import domain.Race;
 import domain.Rider;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,9 +14,9 @@ import java.util.Random;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class RaceServiceImpl implements RaceService {
     final Random random = new Random();
+
     private Race raceInfo;
 
     @Override
@@ -35,5 +34,4 @@ public class RaceServiceImpl implements RaceService {
     public void addMember(List<Rider> rider) {
         raceInfo.setRidersList(rider.subList(0, 4 + random.nextInt(2)));
     }
-
 }

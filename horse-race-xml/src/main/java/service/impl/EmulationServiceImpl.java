@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import service.EmulationService;
+import service.RaceService;
 
 import java.util.Collections;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.Random;
 @NoArgsConstructor
 public class EmulationServiceImpl implements EmulationService {
     final Random random = new Random();
-    private RaceServiceImpl raceService;
+    private RaceService raceService;
     private Rider chooseRider;
 
     @Override
