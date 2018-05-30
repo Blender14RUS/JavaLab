@@ -43,8 +43,7 @@ File `pom.xml` contains lines that pull `tomcat7-maven plugin`. Let's make use o
 Implement horse race emulator using XML configuration
 
 Required beans:
-+ `HorseService` for horse management (horses with their riders, breeds and other characteristics should be obtained from the **configuration**)
-+ `RaceService` for simple getRace() method which generates and returns information about the upcoming race (horses can be choosen randomly)
++ `RaceService` for simple getRace() method which generates and returns information about the upcoming race
 + `EmulationService` for real-time race emulation (it generates data about horses positions on the console for every second)
 
 Main domain objects: `Horse`, `Race`, `Rider`, `Breed`.
@@ -56,6 +55,32 @@ Add client code:
 - Winner announcement is displayed
 
 (Nothing super-fancy in UI, just console application)
+</details>
+
+---
+
+### horse-race-annotation
+<details> 
+<summary>Description</summary>
+Move configuration from XML to Java based and annotation-based approach
+</details>
+
+---
+
+### spring-core-bean-configuration
+<details> 
+<summary>Description</summary>
+Create Spring console app. Use XML as configuration format.
+  
+- Create bean A, use DI via setters, use property placeholder for values
+  
+- Create bean B, use DI via constructor (bean A as argument of constructor)
+
+- Create bean C with singleton scope and bean D with prototype scope. We need to add bean D as property of bean C. Pay attention that they have different scopes. Consider Lookup Method Injection.
+
+- Create bean E and replace logic of one of his method by Method Replacement
+
+- Create bean F and log all possible steps from his lifecycle (lifecycle of Spring bean).
 </details>
 
 ---
