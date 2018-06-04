@@ -1,0 +1,38 @@
+group = "lab.java"
+version = "0.0.1"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    springVersion = '5.0.6.RELEASE'
+    mockitoCoreVersion = '2.12.0'
+    lobmokVersion = '1.16.22'
+}
+dependencies {
+    compile(
+            "org.springframework:spring-core:${springVersion}",
+            "org.springframework:spring-context:${springVersion}",
+            "org.springframework:spring-context-support:${springVersion}",
+    )
+
+    compileOnly(
+            "org.projectlombok:lombok:${lobmokVersion}"
+    )
+
+    testCompile(
+            "org.mockito:mockito-core:${mockitoCoreVersion}"
+    )
+
+    testCompileOnly(
+            "org.projectlombok:lombok:${lobmokVersion}"
+    )
+
+}
